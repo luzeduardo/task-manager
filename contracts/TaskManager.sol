@@ -23,4 +23,13 @@ contract TaskManager {
             _;
         }
     }
+
+    function getTask(uint _taskIndex) public view
+        returns (address owner, string memory name, TaskPhase phase, uint priority) {
+
+        owner = tasks[_taskIndex].owner;
+        name = tasks[_taskIndex].name;
+        phase = tasks[_taskIndex].phase;
+        priority = tasks[_taskIndex].priority;
+    }
 }
